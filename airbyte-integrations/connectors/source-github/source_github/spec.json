@@ -149,6 +149,36 @@
     "predicate_key": ["credentials", "option_title"],
     "predicate_value": "OAuth Credentials",
     "oauth_config_specification": {
+      "oauth_connector_input_specification": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "consent_url": {
+            "type": "string",
+            "const": "https://github.com/login/oauth/authorize?client_id={{client_id_value}}&redirect_uri={{redirect_uri_value}}&state={{state_value}}&scope={{scopes_value | urlencode}}"
+          },
+          "access_token_url": {
+            "type": "string",
+            "const": "https://github.com/login/oauth/access_token"
+          },
+          "scopes": {
+            "type": "array",
+            "const": [
+              {"scope": "repo"},
+              {"scope": "read:org"},
+              {"scope": "read:repo_hook"},
+              {"scope": "read:user"},
+              {"scope": "read:project"},
+              {"scope": "read:discussion"},
+              {"scope": "workflow"}
+            ]
+          },
+          "extract_output": {
+            "type": "array",
+            "const": ["access_token"]
+          }
+        }
+      },
       "complete_oauth_output_specification": {
         "type": "object",
         "additionalProperties": false,
