@@ -511,6 +511,13 @@ spec:
       oauth_connector_input_specification:
         consent_url: "https://slack.com/oauth/v2/authorize?client_id={{client_id_value}}&redirect_uri={{redirect_uri_value}}&state={{state_value}}&scope={{scopes_value}}"
         access_token_url: "https://slack.com/api/oauth.v2.access"
+        access_token_headers:
+          Content-Type: "application/x-www-form-urlencoded"
+        access_token_params:
+          code: "{{ auth_code_value }}"
+          client_id: "{{ client_id_value }}"
+          client_secret: "{{ client_secret_value }}"
+          redirect_uri: "{{ redirect_uri_value }}"
         scopes:
           - scope: "channels:history"
           - scope: "channels:join"
