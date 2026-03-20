@@ -162,13 +162,13 @@
           "redirect_uri": "{{ redirect_uri_value }}"
         },
         "scopes": [
-          {"scope": "repo"},
-          {"scope": "read:org"},
-          {"scope": "read:repo_hook"},
-          {"scope": "read:user"},
-          {"scope": "read:project"},
-          {"scope": "read:discussion"},
-          {"scope": "workflow"}
+          { "scope": "repo" },
+          { "scope": "read:org" },
+          { "scope": "read:repo_hook" },
+          { "scope": "read:user" },
+          { "scope": "read:project" },
+          { "scope": "read:discussion" },
+          { "scope": "workflow" }
         ],
         "extract_output": ["access_token"]
       },
